@@ -1,0 +1,16 @@
+# Title
+
+02.09 SAT
+  . task
+  - note
+  o event
+  X completed
+  _ discarded
+  : group
+    . task
+*   . highlighted task
+  ! idea
+  ? question
+  > migrated to new month
+  < migrated to future
+  ^ migrated up to a new day
