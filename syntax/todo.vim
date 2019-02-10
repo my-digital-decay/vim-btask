@@ -21,40 +21,39 @@ elseif exists("b:current_syntax")
 endif
 
 " patterns
-"syn match todoBoxUrgent    display "\[\!\]"
-"syn match todoBoxHigh      display "\[\^\]"
+syn match todoBoxUrgent    display "\[\!\]"
+syn match todoBoxHigh      display "\[\^\]"
 syn match todoBoxNormal    display "\[ \]"
-"syn match todoBoxLow       display "\[_\]"
-"syn match todoBoxComplete  display "\[x\]"
-"syn match todoBoxDiscard   display "\[-\]"
+syn match todoBoxLow       display "\[_\]"
+syn match todoBoxComplete  display "\[x\]"
+syn match todoBoxDiscard   display "\[-\]"
 
-syn match todoTaskUrgent   display "\[\!\].*$"
-syn match todoTaskHigh     display "\[\^\].*$"
-"syn match  tTaskNormal     display "\[ \].*$"
-syn match todoTaskLow      display "\[_\].*$"
-syn match todoTaskComplete display "\[x\].*$"
-syn match todoTaskDiscard  display "\[-\].*$"
+syn match todoTaskUrgent   display "\[\!\].*$" contains=todoBoxUrgent
+syn match todoTaskHigh     display "\[\^\].*$" contains=todoBoxHigh
+syn match todoTaskNormal   display "\[ \].*$"  contains=todoBoxNormal
+syn match todoTaskLow      display "\[_\].*$"  contains=todoBoxLow
+syn match todoTaskComplete display "\[x\].*$"  contains=todoBoxComplete
+syn match todoTaskDiscard  display "\[-\].*$"  contains=todoBoxDiscard
 
-syn match todoTitle         display "#.*$"
-
-syn region  todoDate       start='<' end='>'
+syn match  todoTitle       display "#.*$"
+syn region todoDate        start='<' end='>'
 
 " highlights
-"hi def link  todoBoxUrgent    Error
-"hi def link  todoBoxHigh      Todo
+hi def link todoBoxUrgent     Error
+hi def link todoBoxHigh       Statement
 hi def link todoBoxNormal     Bold
-"hi def link todoBoxLow        LineNr
-"hi def link  todoBoxComplete  Comment
-"hi def link  todoBoxDiscard   Comment
+hi def link todoBoxLow        LineNr
+hi def link todoBoxComplete   Comment
+hi def link todoBoxDiscard    Comment
 
 hi def link todoTaskUrgent    Error
 hi def link todoTaskHigh      Statement
-"hi def link  todoTaskNormal   Normal
-hi def link todoTaskLow       LineNr
+"hi def link todoTaskNormal    Normal
+"hi def link todoTaskLow       LineNr
 hi def link todoTaskComplete  Comment
 hi def link todoTaskDiscard   Comment
-hi def link todoTitle         CommentDoc
 
+hi def link todoTitle         CommentDoc
 hi def link todoDate          Identifier
 
 let b:current_syntax = "todo"
