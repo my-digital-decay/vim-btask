@@ -10,7 +10,8 @@
 "   o event
 "   X complete
 "   _ discard
-"   : group
+"   : group (open)
+"   | group (closed)
 "   ? question
 "   ! idea
 "   * highlight
@@ -40,6 +41,8 @@ syn match btaskDiscardMark  display "^\s*[_] "
 syn match btaskDiscard      display "^\s*[_] .*$" contains=btaskDiscardMark
 syn match btaskGroupMark    display "^\s*[:] "
 syn match btaskGroup        display "^\s*[:] .*$" contains=btaskGroupMark
+syn match btaskGClosedMark  display "^\s*[|] "
+syn match btaskGClosed      display "^\s*[|] .*$" contains=btaskGroupMark
 syn match btaskNoteMark     display "^\s*[-] "
 syn match btaskNote         display "^\s*[-] .*$" contains=btaskNoteMark
 syn match btaskEventMark    display "^\s*O "
@@ -70,6 +73,8 @@ hi def link btaskQuestionMark  Title
 hi def link btaskIdeaMark      Title
 hi def link btaskGroupMark     btaskTaskMark
 hi def link btaskGroup         VisualNOS
+hi def link btaskGClosedMark   btaskCompleteMark
+hi def link btaskGClosed       btaskComplete
 hi def link btaskMoveMark      btaskTaskMark
 hi def link btaskMove          btaskComplete
 hi def link btaskMigrateMark   btaskTaskMark
