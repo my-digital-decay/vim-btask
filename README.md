@@ -34,13 +34,13 @@ The BTASK file format is used for files with `.btask` and `.task` file extension
   X completed
   _ discarded
   : group
-    . task
-*   . highlighted task
+  | group (closed)
+* . highlighted task
   ! idea
   ? question
   > migrated to new month
   < migrated to future
-  ^ migrated up to a new day
+  ^ move to a new day
 ```
 
 A sample file (sample.btask) also exists in the root of the repository.
