@@ -65,12 +65,14 @@ hi def link btaskDate          Identifier
 hi def link btaskTaskMark      ModeMsg
 hi def link btaskNoteMark      Statement
 hi def link btaskEventMark     Directory
+hi def link btaskEvent         Directory
 hi def link btaskCompleteMark  Comment
 hi def link btaskComplete      Comment
 hi def link btaskDiscardMark   btaskCompleteMark
 hi def link btaskDiscard       btaskComplete
 hi def link btaskQuestionMark  Title
 hi def link btaskIdeaMark      Title
+hi def link btaskIdea          ModeMsg
 hi def link btaskGroupMark     btaskTaskMark
 hi def link btaskGroup         VisualNOS
 hi def link btaskGClosedMark   btaskCompleteMark
