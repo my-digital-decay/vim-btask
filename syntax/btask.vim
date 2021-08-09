@@ -18,6 +18,7 @@
 "   > migrate (next month)
 "   < migrate (future)
 "   ^ move (new day)
+"   @ delegate
 
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded
@@ -58,6 +59,9 @@ syn match btaskQuestion     display "^\s*[?] .*$" contains=btaskQuestionMark
 syn match btaskIdeaMark     display "^\s*[!] "
 syn match btaskIdea         display "^\s*[!] .*$" contains=btaskIdeaMark
 syn match btaskHighlight    display "^\s*[*] .*$"
+"syn match btaskDelegateMark display "^\s*[@] (\[.+\])?"
+syn match btaskDelegateMark display "^\s*[@] "
+syn match btaskDelegate     display "^\s*[@] .*$" contains=btaskDelegateMark
 
 " highlights
 hi def link btaskTitle         Title
@@ -82,5 +86,7 @@ hi def link btaskMove          btaskComplete
 hi def link btaskMigrateMark   btaskTaskMark
 hi def link btaskMigrate       btaskComplete
 hi def link btaskHighlight     FoldColumn
+hi def link btaskDelegateMark  Typedef
+hi def link btaskDelegate      btaskComplete
 
 let b:current_syntax = "btask"
